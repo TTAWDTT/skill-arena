@@ -1,0 +1,15 @@
+task_id: c03_retry_decorator
+category: coding
+title: Retry decorator with backoff
+prompt: |
+  Implement a Python decorator `retry(times: int, exceptions: tuple[type[BaseException], ...]=(Exception,), delay: float=0.0)`
+  that retries a function on specified exceptions. Show a short usage example.
+expected_behavior: |
+  Decorator preserves return value on success; retries only listed exceptions;
+  stops after `times` attempts and re-raises last error.
+scoring_rubric:
+  - Correct retry count semantics
+  - Only catches configured exceptions
+  - Clear example
+rule_checkable: false
+tags: [python, decorator]

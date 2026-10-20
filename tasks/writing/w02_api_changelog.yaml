@@ -1,0 +1,15 @@
+task_id: w02_api_changelog
+category: writing
+title: Write API changelog entry
+prompt: |
+  Write a changelog entry for: endpoint POST /v2/reports now requires
+  `project_id`, deprecates `team_id`, returns 400 if both missing.
+  Audience: external API consumers.
+expected_behavior: |
+  Migration-focused changelog with before/after and breakage callout.
+scoring_rubric:
+  - Breaking change clearly labeled
+  - Migration path explained
+  - Concise, scannable structure
+rule_checkable: false
+tags: [docs, api]

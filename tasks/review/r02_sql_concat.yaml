@@ -1,0 +1,19 @@
+task_id: r02_sql_concat
+category: review
+title: Review SQL string concatenation
+prompt: |
+  Review:
+
+  ```python
+  def get_user(db, name):
+      q = f"SELECT * FROM users WHERE name = '{name}'"
+      return db.execute(q).fetchone()
+  ```
+expected_behavior: |
+  Flag SQL injection, recommend parameterized queries, note fetchone edge cases.
+scoring_rubric:
+  - Names SQL injection risk
+  - Recommends bound parameters
+  - Notes validation / least privilege if relevant
+rule_checkable: false
+tags: [security, sql]

@@ -1,0 +1,15 @@
+{
+  "raw": 350,
+  "deduped": 350,
+  "kept": 300,
+  "rejected": 50,
+  "by_category": {
+    "data": 20,
+    "coding": 165,
+    "review": 68,
+    "writing": 20,
+    "other": 7,
+    "slides": 8,
+    "research": 12
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "task_id": "w01_incident_blurb",
+  "skill_id": "builtin__release-notes",
+  "baseline_attempts": [
+    {
+      "attempt": 1,
+      "condition": "baseline",
+      "model": "gpt-5.6-luna",
+      "skill_id": null,
+      "prompt": "Rewrite the following into a crisp engineering update (≤120 words),\nlead with impact and mitigation:\n\n\"So basically yesterday around evening-ish the checkout service was kind of\nweird and some people said payments failed maybe due to redis being overloaded\nor something and we restarted a few pods and it got better but we should\nprobably look at connection pool settings later.\"\n",
+      "response_text": "[dry-run baseline] Rewrite incident note for engineers",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": null,
+      "created_at": "2026-10-20T19:01:42.339623+00:00"
+    },
+    {
+      "attempt": 2,
+      "condition": "baseline",
+      "model": "gpt-5.6-luna",
+      "skill_id": null,
+      "prompt": "Rewrite the following into a crisp engineering update (≤120 words),\nlead with impact and mitigation:\n\n\"So basically yesterday around evening-ish the checkout service was kind of\nweird and some people said payments failed maybe due to redis being overloaded\nor something and we restarted a few pods and it got better but we should\nprobably look at connection pool settings later.\"\n",
+      "response_text": "[dry-run baseline] Rewrite incident note for engineers",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": null,
+      "created_at": "2026-10-20T19:01:42.339634+00:00"
+    },
+    {
+      "attempt": 3,
+      "condition": "baseline",
+      "model": "gpt-5.6-luna",
+      "skill_id": null,
+      "prompt": "Rewrite the following into a crisp engineering update (≤120 words),\nlead with impact and mitigation:\n\n\"So basically yesterday around evening-ish the checkout service was kind of\nweird and some people said payments failed maybe due to redis being overloaded\nor something and we restarted a few pods and it got better but we should\nprobably look at connection pool settings later.\"\n",
+      "response_text": "[dry-run baseline] Rewrite incident note for engineers",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": null,
+      "created_at": "2026-10-20T19:01:42.339640+00:00"
+    }
+  ],
+  "skill_attempts": [
+    {
+      "attempt": 1,
+      "condition": "with_skill",
+      "model": "gpt-5.6-luna",
+      "skill_id": "builtin__release-notes",
+      "prompt": "Rewrite the following into a crisp engineering update (≤120 words),\nlead with impact and mitigation:\n\n\"So basically yesterday around evening-ish the checkout service was kind of\nweird and some people said payments failed maybe due to redis being overloaded\nor something and we restarted a few pods and it got better but we should\nprobably look at connection pool settings later.\"\n",
+      "response_text": "[dry-run with-skill:release-notes] Rewrite incident note for engineers",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": true,
+      "created_at": "2026-10-20T19:01:42.339631+00:00"
+    },
+    {
+      "attempt": 2,
+      "condition": "with_skill",
+      "model": "gpt-5.6-luna",
+      "skill_id": "builtin__release-notes",
+      "prompt": "Rewrite the following into a crisp engineering update (≤120 words),\nlead with impact and mitigation:\n\n\"So basically yesterday around evening-ish the checkout service was kind of\nweird and some people said payments failed maybe due to redis being overloaded\nor something and we restarted a few pods and it got better but we should\nprobably look at connection pool settings later.\"\n",
+      "response_text": "[dry-run with-skill:release-notes] Rewrite incident note for engineers",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": true,
+      "created_at": "2026-10-20T19:01:42.339637+00:00"
+    },
+    {
+      "attempt": 3,
+      "condition": "with_skill",
+      "model": "gpt-5.6-luna",
+      "skill_id": "builtin__release-notes",
+      "prompt": "Rewrite the following into a crisp engineering update (≤120 words),\nlead with impact and mitigation:\n\n\"So basically yesterday around evening-ish the checkout service was kind of\nweird and some people said payments failed maybe due to redis being overloaded\nor something and we restarted a few pods and it got better but we should\nprobably look at connection pool settings later.\"\n",
+      "response_text": "[dry-run with-skill:release-notes] Rewrite incident note for engineers",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": true,
+      "created_at": "2026-10-20T19:01:42.339642+00:00"
+    }
+  ],
+  "judge_verdicts": [
+    {
+      "task_id": "w01_incident_blurb",
+      "skill_id": "builtin__release-notes",
+      "pair_id": "w01_incident_blurb__builtin__release-notes",
+      "order": "A=baseline,B=skill",
+      "winner": "B",
+      "preference_for_skill": "win",
+      "rationale": "dry-run",
+      "scores": {
+        "A": 6,
+        "B": 7
+      },
+      "judge_model": "gpt-5.6-sol",
+      "raw": {
+        "winner": "B",
+        "rationale": "dry-run",
+        "scores": {
+          "A": 6,
+          "B": 7
+        }
+      }
+    },
+    {
+      "task_id": "w01_incident_blurb",
+      "skill_id": "builtin__release-notes",
+      "pair_id": "w01_incident_blurb__builtin__release-notes",
+      "order": "A=skill,B=baseline",
+      "winner": "A",
+      "preference_for_skill": "win",
+      "rationale": "dry-run",
+      "scores": {
+        "A": 6,
+        "B": 7
+      },
+      "judge_model": "gpt-5.6-sol",
+      "raw": {
+        "winner": "A",
+        "rationale": "dry-run",
+        "scores": {
+          "A": 6,
+          "B": 7
+        }
+      }
+    }
+  ],
+  "test_pass_baseline": null,
+  "test_pass_skill": null,
+  "trigger_success_rate": 1.0,
+  "skill_win_rate": 1.0
+}

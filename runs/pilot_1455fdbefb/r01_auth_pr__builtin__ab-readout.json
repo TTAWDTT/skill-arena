@@ -1,0 +1,148 @@
+{
+  "task_id": "r01_auth_pr",
+  "skill_id": "builtin__ab-readout",
+  "baseline_attempts": [
+    {
+      "attempt": 1,
+      "condition": "baseline",
+      "model": "gpt-5.6-luna",
+      "skill_id": null,
+      "prompt": "Review this PR snippet for issues:\n\n```python\ndef require_auth(handler):\n    def wrapper(req):\n        token = req.headers.get(\"Authorization\")\n        user = cache.get(token)  # may be None\n        req.user = user\n        return handler(req)\n    return wrapper\n```\n\nList blocking issues and suggested fixes.\n",
+      "response_text": "[dry-run baseline] Review auth middleware snippet",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": null,
+      "created_at": "2026-10-20T19:01:42.340362+00:00"
+    },
+    {
+      "attempt": 2,
+      "condition": "baseline",
+      "model": "gpt-5.6-luna",
+      "skill_id": null,
+      "prompt": "Review this PR snippet for issues:\n\n```python\ndef require_auth(handler):\n    def wrapper(req):\n        token = req.headers.get(\"Authorization\")\n        user = cache.get(token)  # may be None\n        req.user = user\n        return handler(req)\n    return wrapper\n```\n\nList blocking issues and suggested fixes.\n",
+      "response_text": "[dry-run baseline] Review auth middleware snippet",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": null,
+      "created_at": "2026-10-20T19:01:42.340370+00:00"
+    },
+    {
+      "attempt": 3,
+      "condition": "baseline",
+      "model": "gpt-5.6-luna",
+      "skill_id": null,
+      "prompt": "Review this PR snippet for issues:\n\n```python\ndef require_auth(handler):\n    def wrapper(req):\n        token = req.headers.get(\"Authorization\")\n        user = cache.get(token)  # may be None\n        req.user = user\n        return handler(req)\n    return wrapper\n```\n\nList blocking issues and suggested fixes.\n",
+      "response_text": "[dry-run baseline] Review auth middleware snippet",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": null,
+      "created_at": "2026-10-20T19:01:42.340375+00:00"
+    }
+  ],
+  "skill_attempts": [
+    {
+      "attempt": 1,
+      "condition": "with_skill",
+      "model": "gpt-5.6-luna",
+      "skill_id": "builtin__ab-readout",
+      "prompt": "Review this PR snippet for issues:\n\n```python\ndef require_auth(handler):\n    def wrapper(req):\n        token = req.headers.get(\"Authorization\")\n        user = cache.get(token)  # may be None\n        req.user = user\n        return handler(req)\n    return wrapper\n```\n\nList blocking issues and suggested fixes.\n",
+      "response_text": "[dry-run with-skill:ab-readout] Review auth middleware snippet",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": true,
+      "created_at": "2026-10-20T19:01:42.340366+00:00"
+    },
+    {
+      "attempt": 2,
+      "condition": "with_skill",
+      "model": "gpt-5.6-luna",
+      "skill_id": "builtin__ab-readout",
+      "prompt": "Review this PR snippet for issues:\n\n```python\ndef require_auth(handler):\n    def wrapper(req):\n        token = req.headers.get(\"Authorization\")\n        user = cache.get(token)  # may be None\n        req.user = user\n        return handler(req)\n    return wrapper\n```\n\nList blocking issues and suggested fixes.\n",
+      "response_text": "[dry-run with-skill:ab-readout] Review auth middleware snippet",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": true,
+      "created_at": "2026-10-20T19:01:42.340373+00:00"
+    },
+    {
+      "attempt": 3,
+      "condition": "with_skill",
+      "model": "gpt-5.6-luna",
+      "skill_id": "builtin__ab-readout",
+      "prompt": "Review this PR snippet for issues:\n\n```python\ndef require_auth(handler):\n    def wrapper(req):\n        token = req.headers.get(\"Authorization\")\n        user = cache.get(token)  # may be None\n        req.user = user\n        return handler(req)\n    return wrapper\n```\n\nList blocking issues and suggested fixes.\n",
+      "response_text": "[dry-run with-skill:ab-readout] Review auth middleware snippet",
+      "raw_response": {},
+      "latency_ms": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "error": null,
+      "triggered": true,
+      "created_at": "2026-10-20T19:01:42.340377+00:00"
+    }
+  ],
+  "judge_verdicts": [
+    {
+      "task_id": "r01_auth_pr",
+      "skill_id": "builtin__ab-readout",
+      "pair_id": "r01_auth_pr__builtin__ab-readout",
+      "order": "A=baseline,B=skill",
+      "winner": "B",
+      "preference_for_skill": "win",
+      "rationale": "dry-run",
+      "scores": {
+        "A": 6,
+        "B": 7
+      },
+      "judge_model": "gpt-5.6-sol",
+      "raw": {
+        "winner": "B",
+        "rationale": "dry-run",
+        "scores": {
+          "A": 6,
+          "B": 7
+        }
+      }
+    },
+    {
+      "task_id": "r01_auth_pr",
+      "skill_id": "builtin__ab-readout",
+      "pair_id": "r01_auth_pr__builtin__ab-readout",
+      "order": "A=skill,B=baseline",
+      "winner": "A",
+      "preference_for_skill": "win",
+      "rationale": "dry-run",
+      "scores": {
+        "A": 6,
+        "B": 7
+      },
+      "judge_model": "gpt-5.6-sol",
+      "raw": {
+        "winner": "A",
+        "rationale": "dry-run",
+        "scores": {
+          "A": 6,
+          "B": 7
+        }
+      }
+    }
+  ],
+  "test_pass_baseline": null,
+  "test_pass_skill": null,
+  "trigger_success_rate": 1.0,
+  "skill_win_rate": 1.0
+}

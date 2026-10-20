@@ -1,0 +1,14 @@
+task_id: rs01_compare_rag
+category: research
+title: Compare RAG chunking strategies
+prompt: |
+  Compare fixed-size vs semantic chunking for a code documentation RAG system.
+  Give tradeoffs and a recommendation for a 50k-file monorepo.
+expected_behavior: |
+  Structured comparison with recommendation tied to monorepo constraints.
+scoring_rubric:
+  - Clear tradeoffs table or bullets
+  - Recommendation justified for large code corpora
+  - Mentions retrieval failure modes
+rule_checkable: false
+tags: [rag]

@@ -1,0 +1,47 @@
+# Skill Arena default config
+models:
+  executor: gpt-5.6-luna   # run tasks with / without skill
+  judge: gpt-5.6-sol       # blind A/B preference judge
+
+paths:
+  skills_raw: skills/raw
+  skills_filtered: skills/filtered
+  catalog: catalog
+  tasks: tasks
+  runs: runs
+  reports: reports
+  curated: curated
+
+collect:
+  target_raw: 300
+  queries:
+    - "filename:SKILL.md path:skills"
+    - "filename:SKILL.md \"name:\" \"description:\""
+    - "filename:SKILL.md anthropic skill"
+    - "filename:SKILL.md cursor skill"
+  max_per_query: 100
+
+filter:
+  drop_empty_body_chars: 80
+  min_description_chars: 20
+  keep_ratio_hint: 0.5
+  categories:
+    - coding
+    - review
+    - writing
+    - slides
+    - data
+    - research
+    - other
+
+eval:
+  repeats: 3
+  pilot_skill_count: 30
+  temperature_executor: 0.2
+  temperature_judge: 0.0
+  max_output_tokens: 4096
+  load_skill_mode: system_prepend  # real trigger approximation for offline arena
+
+judge:
+  swap_order: true
+  require_json: true
