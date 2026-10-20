@@ -1,0 +1,20 @@
+task_id: w01_incident_blurb
+category: writing
+title: Rewrite incident note for engineers
+prompt: |
+  Rewrite the following into a crisp engineering update (≤120 words),
+  lead with impact and mitigation:
+
+  "So basically yesterday around evening-ish the checkout service was kind of
+  weird and some people said payments failed maybe due to redis being overloaded
+  or something and we restarted a few pods and it got better but we should
+  probably look at connection pool settings later."
+expected_behavior: |
+  Clear timeline/impact, confirmed mitigation, open follow-up — no fluff.
+scoring_rubric:
+  - Conclusion first
+  - Concrete mitigation stated
+  - Follow-up action present
+  - Within length spirit (~120 words)
+rule_checkable: false
+tags: [rewrite]

@@ -1,0 +1,17 @@
+task_id: c01_fizzbuzz
+category: coding
+title: Implement FizzBuzz helper
+prompt: |
+  Write a Python function `fizzbuzz(n: int) -> list[str]` that returns the
+  FizzBuzz sequence for 1..n. Rules: multiples of 3 → "Fizz", 5 → "Buzz",
+  both → "FizzBuzz", else the number as string.
+  Also include 3 pytest tests.
+expected_behavior: |
+  Correct FizzBuzz logic, typed signature, and runnable pytest cases covering
+  normal, fizz, buzz, and fizzbuzz cases.
+scoring_rubric:
+  - Correct FizzBuzz mapping for edge multiples
+  - Includes tests that would catch off-by-one or missing FizzBuzz
+  - Code is concise and valid Python
+rule_checkable: false
+tags: [python, algorithm]

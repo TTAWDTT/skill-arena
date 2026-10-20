@@ -1,0 +1,14 @@
+task_id: o01_triage
+category: other
+title: Triage a vague user ask
+prompt: |
+  User says: "make it better". Ask at most 5 clarifying questions, then propose
+  a default plan assuming a slow web dashboard.
+expected_behavior: |
+  High-signal clarifying questions + a pragmatic default plan.
+scoring_rubric:
+  - Questions reduce ambiguity
+  - Default plan is actionable
+  - Avoids over-asking
+rule_checkable: false
+tags: [triage]

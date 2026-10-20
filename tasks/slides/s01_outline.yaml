@@ -1,0 +1,14 @@
+task_id: s01_outline
+category: slides
+title: Outline a 6-slide product review
+prompt: |
+  Create a 6-slide outline for a quarterly product review: title, metric snapshot,
+  wins, misses, bets, ask. One line purpose per slide + 3 bullet content hints.
+expected_behavior: |
+  Exactly 6 slides, each with purpose and content hints; executive-friendly.
+scoring_rubric:
+  - Six slides covering required arcs
+  - Bullets are concrete not vague
+  - Suitable for 10-minute delivery
+rule_checkable: false
+tags: [outline]

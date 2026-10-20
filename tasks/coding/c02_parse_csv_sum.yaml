@@ -1,0 +1,15 @@
+task_id: c02_parse_csv_sum
+category: coding
+title: Sum a column from CSV text
+prompt: |
+  Given CSV text with a header row, write Python function
+  `sum_column(csv_text: str, column: str) -> float` that sums a numeric column.
+  Skip empty cells. Raise ValueError if column missing.
+expected_behavior: |
+  Robust CSV parsing (stdlib ok), clear error on missing column, ignore blanks.
+scoring_rubric:
+  - Correct sum for mixed ints/floats
+  - Raises on missing column
+  - Handles empty cells without crashing
+rule_checkable: false
+tags: [python, csv]

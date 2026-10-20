@@ -1,0 +1,186 @@
+"""Larger builtin skill bank so pilot can run offline at ~30 skills."""
+
+from __future__ import annotations
+
+BUILTINS: list[dict[str, str]] = [
+    {
+        "name": "python-tester",
+        "description": "Write focused pytest cases for a small Python function.",
+        "category": "coding",
+        "body": "# Python Tester\n\n## When\nUser needs tests.\n\n## Steps\n1. Infer contract\n2. Edge cases\n3. Assert behavior\n\n## Example\n```python\nassert add(1,2)==3\n```\n",
+    },
+    {
+        "name": "api-implementer",
+        "description": "Implement a small typed Python API helper with clear errors.",
+        "category": "coding",
+        "body": "# API Implementer\n\n## Rules\n- Explicit types\n- Raise ValueError on bad input\n- Keep helpers pure when possible\n",
+    },
+    {
+        "name": "refactor-safe",
+        "description": "Refactor code while preserving behavior; list risks before edits.",
+        "category": "coding",
+        "body": "# Safe Refactor\n\n1. Characterize current behavior\n2. Propose minimal diff\n3. List regression risks\n4. Suggest tests\n",
+    },
+    {
+        "name": "debug-bisect",
+        "description": "Debug failures by bisecting inputs and stating hypotheses.",
+        "category": "coding",
+        "body": "# Debug Bisect\n\n## Process\n- Reproduce\n- Minimize input\n- One hypothesis at a time\n- Confirm with a check\n",
+    },
+    {
+        "name": "pr-reviewer",
+        "description": "Review a pull request for correctness, risks, and missing tests.",
+        "category": "review",
+        "body": "# PR Reviewer\n\n## Checklist\n- Correctness\n- Security\n- Tests\n- API breaks\n\n## Output\nBlocking / non-blocking\n",
+    },
+    {
+        "name": "security-spotter",
+        "description": "Find injection, authz, and secret-handling issues in short snippets.",
+        "category": "review",
+        "body": "# Security Spotter\n\nFocus: injection, authn/z, SSRF, path traversal, secret leakage.\nAlways propose a fix patch sketch.\n",
+    },
+    {
+        "name": "test-gap-finder",
+        "description": "Identify missing tests for a code change description.",
+        "category": "review",
+        "body": "# Test Gap Finder\n\nList untested branches, boundary values, and failure modes.\n",
+    },
+    {
+        "name": "concise-writer",
+        "description": "Rewrite technical notes into clear short prose for engineers.",
+        "category": "writing",
+        "body": "# Concise Writer\n\n- Conclusion first\n- Short sentences\n- Keep numbers\n- Delete hype\n",
+    },
+    {
+        "name": "changelog-writer",
+        "description": "Write migration-focused changelog entries for API changes.",
+        "category": "writing",
+        "body": "# Changelog Writer\n\nStructure: Summary, Breaking, Migration, Example.\n",
+    },
+    {
+        "name": "exec-summary",
+        "description": "Turn messy notes into an executive summary with decisions and asks.",
+        "category": "writing",
+        "body": "# Exec Summary\n\nSections: Context, Decision, Impact, Ask.\n≤150 words unless asked.\n",
+    },
+    {
+        "name": "slide-outline",
+        "description": "Produce tight slide outlines with one purpose per slide.",
+        "category": "slides",
+        "body": "# Slide Outline\n\nEach slide: title, purpose line, 3 bullets max.\nNo walls of text.\n",
+    },
+    {
+        "name": "metric-story",
+        "description": "Turn metric deltas into a slide narrative with caveats.",
+        "category": "slides",
+        "body": "# Metric Story\n\nSnapshot → drivers → risks → ask.\nAlways label denominators.\n",
+    },
+    {
+        "name": "funnel-analyst",
+        "description": "Compute funnel conversion with explicit denominators and caveats.",
+        "category": "data",
+        "body": "# Funnel Analyst\n\nShow step rates and overall rate. State sample size and selection bias risks.\n",
+    },
+    {
+        "name": "outlier-explainer",
+        "description": "Explain metric outliers with non-causal hypotheses and checks.",
+        "category": "data",
+        "body": "# Outlier Explainer\n\nFor each hypothesis: mechanism + next data check. Never claim causation casually.\n",
+    },
+    {
+        "name": "sql-sketch",
+        "description": "Sketch readable SQL for analytic questions with grain notes.",
+        "category": "data",
+        "body": "# SQL Sketch\n\nState grain, filters, joins, and gotchas before SQL.\n",
+    },
+    {
+        "name": "rag-researcher",
+        "description": "Compare retrieval / RAG design options with failure modes.",
+        "category": "research",
+        "body": "# RAG Researcher\n\nCompare options on recall, latency, ops cost, and failure modes.\nEnd with a recommendation tied to constraints.\n",
+    },
+    {
+        "name": "lit-mapper",
+        "description": "Map a research question into sources, claims, and open gaps.",
+        "category": "research",
+        "body": "# Lit Mapper\n\nOutput: question, claim table, disagreements, gaps, next experiment.\n",
+    },
+    {
+        "name": "decision-brief",
+        "description": "Research a decision and present options with risks.",
+        "category": "research",
+        "body": "# Decision Brief\n\nOptions × criteria matrix, risks, recommendation, validation plan.\n",
+    },
+    {
+        "name": "ask-clarifier",
+        "description": "Triage vague requests with few high-signal questions and a default plan.",
+        "category": "other",
+        "body": "# Ask Clarifier\n\n≤5 questions. Then a default plan under stated assumptions.\n",
+    },
+    {
+        "name": "checklist-maker",
+        "description": "Turn goals into an actionable checklist with done criteria.",
+        "category": "other",
+        "body": "# Checklist Maker\n\nEach item: action verb + done-when criterion.\n",
+    },
+    {
+        "name": "tradeoff-framer",
+        "description": "Frame engineering tradeoffs without prescribing prematurely.",
+        "category": "other",
+        "body": "# Tradeoff Framer\n\nAxes, options, irreversible decisions, recommend only if constraints clear.\n",
+    },
+    {
+        "name": "python-type-tightener",
+        "description": "Add precise type hints and narrow invalid states in Python APIs.",
+        "category": "coding",
+        "body": "# Type Tightener\n\nPrefer TypedDict/Literal/NewType where they prevent bugs. Show before/after.\n",
+    },
+    {
+        "name": "error-message-coach",
+        "description": "Improve exception messages to be actionable for callers.",
+        "category": "coding",
+        "body": "# Error Message Coach\n\nInclude what failed, invalid value, and how to fix.\n",
+    },
+    {
+        "name": "perf-nitpicker",
+        "description": "Review code for obvious performance footguns in hot paths.",
+        "category": "review",
+        "body": "# Perf Nitpicker\n\nN+1, unnecessary copies, sync I/O in async, unbounded caches.\n",
+    },
+    {
+        "name": "release-notes",
+        "description": "Write user-facing release notes from engineer bullets.",
+        "category": "writing",
+        "body": "# Release Notes\n\nUser impact first. Avoid internal jargon. Group by New / Fixed / Breaking.\n",
+    },
+    {
+        "name": "pitch-deck-slim",
+        "description": "Compress a pitch into 5 slides with one idea each.",
+        "category": "slides",
+        "body": "# Pitch Deck Slim\n\nProblem, Insight, Product, Proof, Ask. One idea per slide.\n",
+    },
+    {
+        "name": "ab-readout",
+        "description": "Write an experiment readout separating lift, uncertainty, and decision.",
+        "category": "data",
+        "body": "# A/B Readout\n\nPrimary metric, lift, CI/uncertainty, guards, ship/no-ship recommendation.\n",
+    },
+    {
+        "name": "competitor-scan",
+        "description": "Research competitors into a structured comparison for PMs.",
+        "category": "research",
+        "body": "# Competitor Scan\n\nTable: feature, proof link placeholder, strength, weakness. End with white space.\n",
+    },
+    {
+        "name": "meeting-notes",
+        "description": "Turn transcript-like notes into decisions, owners, and due dates.",
+        "category": "other",
+        "body": "# Meeting Notes\n\nDecisions / Action items(owner, due) / Open questions.\n",
+    },
+    {
+        "name": "prompt-hardener",
+        "description": "Harden a weak task prompt with constraints, examples, and success checks.",
+        "category": "other",
+        "body": "# Prompt Hardener\n\nAdd inputs, constraints, output schema, and acceptance checks.\n",
+    },
+]

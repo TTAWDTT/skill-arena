@@ -1,0 +1,14 @@
+task_id: d02_outlier
+category: data
+title: Explain an outlier metric move
+prompt: |
+  DAU rose 35% day-over-day but weekly active users were flat. List 3 plausible
+  non-causal explanations and what data you'd check next for each.
+expected_behavior: |
+  Separates observation from hypothesis; proposes verifications.
+scoring_rubric:
+  - At least 3 distinct hypotheses
+  - Each has a verification check
+  - Avoids declaring causation
+rule_checkable: false
+tags: [metrics]

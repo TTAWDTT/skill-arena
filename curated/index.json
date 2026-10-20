@@ -1,0 +1,202 @@
+[
+  {
+    "skill_id": "builtin__api-implementer",
+    "name": "api-implementer",
+    "category": "coding",
+    "source_url": "builtin://api-implementer",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__debug-bisect",
+    "name": "debug-bisect",
+    "category": "coding",
+    "source_url": "builtin://debug-bisect",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__python-tester",
+    "name": "python-tester",
+    "category": "coding",
+    "source_url": "builtin://python-tester",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__python-type-tightener",
+    "name": "python-type-tightener",
+    "category": "coding",
+    "source_url": "builtin://python-type-tightener",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__refactor-safe",
+    "name": "refactor-safe",
+    "category": "coding",
+    "source_url": "builtin://refactor-safe",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__outlier-explainer",
+    "name": "outlier-explainer",
+    "category": "data",
+    "source_url": "builtin://outlier-explainer",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__exec-summary",
+    "name": "exec-summary",
+    "category": "other",
+    "source_url": "builtin://exec-summary",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 1,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__funnel-analyst",
+    "name": "funnel-analyst",
+    "category": "other",
+    "source_url": "builtin://funnel-analyst",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 1,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__ab-readout",
+    "name": "ab-readout",
+    "category": "review",
+    "source_url": "builtin://ab-readout",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__concise-writer",
+    "name": "concise-writer",
+    "category": "review",
+    "source_url": "builtin://concise-writer",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__pr-reviewer",
+    "name": "pr-reviewer",
+    "category": "review",
+    "source_url": "builtin://pr-reviewer",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__prompt-hardener",
+    "name": "prompt-hardener",
+    "category": "review",
+    "source_url": "builtin://prompt-hardener",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__security-spotter",
+    "name": "security-spotter",
+    "category": "review",
+    "source_url": "builtin://security-spotter",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__slide-outline",
+    "name": "slide-outline",
+    "category": "review",
+    "source_url": "builtin://slide-outline",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__tradeoff-framer",
+    "name": "tradeoff-framer",
+    "category": "review",
+    "source_url": "builtin://tradeoff-framer",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__competitor-scan",
+    "name": "competitor-scan",
+    "category": "research",
+    "source_url": "builtin://competitor-scan",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 1,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__decision-brief",
+    "name": "decision-brief",
+    "category": "research",
+    "source_url": "builtin://decision-brief",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 1,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__lit-mapper",
+    "name": "lit-mapper",
+    "category": "research",
+    "source_url": "builtin://lit-mapper",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 1,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__rag-researcher",
+    "name": "rag-researcher",
+    "category": "research",
+    "source_url": "builtin://rag-researcher",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 1,
+    "beats_baseline": true
+  },
+  {
+    "skill_id": "builtin__release-notes",
+    "name": "release-notes",
+    "category": "writing",
+    "source_url": "builtin://release-notes",
+    "avg_win_rate": 1.0,
+    "avg_trigger_success": 1.0,
+    "n_pairs": 2,
+    "beats_baseline": true
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "run_id": "1455fdbefb",
+  "executor_model": "gpt-5.6-luna",
+  "judge_model": "gpt-5.6-sol",
+  "skills": [
+    "builtin__python-tester",
+    "builtin__api-implementer",
+    "builtin__refactor-safe",
+    "builtin__debug-bisect",
+    "builtin__pr-reviewer",
+    "builtin__security-spotter",
+    "builtin__concise-writer",
+    "builtin__exec-summary",
+    "builtin__slide-outline",
+    "builtin__funnel-analyst",
+    "builtin__outlier-explainer",
+    "builtin__rag-researcher",
+    "builtin__lit-mapper",
+    "builtin__decision-brief",
+    "builtin__tradeoff-framer",
+    "builtin__python-type-tightener",
+    "builtin__release-notes",
+    "builtin__ab-readout",
+    "builtin__competitor-scan",
+    "builtin__prompt-hardener"
+  ],
+  "tasks": [
+    "c01_fizzbuzz",
+    "c02_parse_csv_sum",
+    "c03_retry_decorator",
+    "d01_funnel",
+    "d02_outlier",
+    "o01_triage",
+    "rs01_compare_rag",
+    "r01_auth_pr",
+    "r02_sql_concat",
+    "s01_outline",
+    "w01_incident_blurb",
+    "w02_api_changelog"
+  ],
+  "repeats": 3,
+  "dry_run": true
+}

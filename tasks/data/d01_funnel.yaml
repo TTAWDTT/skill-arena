@@ -1,0 +1,17 @@
+task_id: d01_funnel
+category: data
+title: Compute funnel conversion
+prompt: |
+  Given counts signup=1000, activate=420, pay=84, compute step conversion rates
+  and overall signup→pay. Present a tiny markdown table and one sentence insight.
+expected_behavior: |
+  Correct rates (42%, 20%, 8.4% overall) with clear denominators.
+scoring_rubric:
+  - Arithmetic correct
+  - Denominators explicit
+  - Insight is non-vacuous
+rule_checkable: true
+rule_checks:
+  - type: contains
+    value: "8.4"
+tags: [funnel]

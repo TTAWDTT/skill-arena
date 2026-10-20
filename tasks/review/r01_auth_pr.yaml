@@ -1,0 +1,26 @@
+task_id: r01_auth_pr
+category: review
+title: Review auth middleware snippet
+prompt: |
+  Review this PR snippet for issues:
+
+  ```python
+  def require_auth(handler):
+      def wrapper(req):
+          token = req.headers.get("Authorization")
+          user = cache.get(token)  # may be None
+          req.user = user
+          return handler(req)
+      return wrapper
+  ```
+
+  List blocking issues and suggested fixes.
+expected_behavior: |
+  Call out missing Bearer parsing, None user not rejected, cache poisoning /
+  missing auth failure path, and lack of tests.
+scoring_rubric:
+  - Identifies authentication bypass when token missing/invalid
+  - Mentions header format / Bearer handling
+  - Suggests concrete fix and tests
+rule_checkable: false
+tags: [security, python]
