@@ -8,8 +8,8 @@ from .collect import collect_from_github, seed_builtin_skills
 from .config import load_config
 from .evaluate import evaluate_pilot
 from .filter_skills import coarse_filter
-from .ingest_local import ingest_skill_md_tree
 from .gateway import GatewayClient
+from .ingest_local import ingest_skill_md_tree
 from .report import build_leaderboard, write_patterns_stub
 
 
