@@ -15,13 +15,13 @@ Calls go through **AGIHub ModelHub Responses API**:
 POST {MODELHUB_BASE_URL}/responses
 ```
 
-Default base URL (AGIHub proxy):
+Set `MODELHUB_BASE_URL` or `MODEL_GATEWAY_URL` in `.env`. If both are unset, the placeholder below is used and will not resolve:
 
 ```text
-https://agihub.bytedance.net/api_proxy/modelhub/agent-cn-01/api/modelhub/online
+<YOUR_MODEL_GATEWAY>
 ```
 
-Set credentials in `.env` (see `.env.example`). When the AGIHub gateway is reachable:
+Also set `MODELHUB_API_KEY` or `MODELHUB_AK` (see `.env.example`). When the gateway is reachable:
 
 ```bash
 agihub-cli modelhub get_modelhub_token
@@ -48,7 +48,7 @@ src/skill_arena/     # pipeline code
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
-cp .env.example .env   # fill MODELHUB_API_KEY / MODELHUB_AK
+cp .env.example .env   # set MODEL_GATEWAY_URL or MODELHUB_BASE_URL, plus MODELHUB_API_KEY / MODELHUB_AK
 
 # Stage 0 smoke (no API)
 skill-arena seed

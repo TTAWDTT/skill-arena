@@ -12,7 +12,7 @@
 ## Blocked / needs you when awake
 
 1. **Corp network / AGIHub gateway** currently times out from this machine  
-   (`2t8l4ge5.fn.bytedance.net` and `aidp.bytedance.net`).  
+   (endpoint comes from `MODELHUB_BASE_URL` or `MODEL_GATEWAY_URL`).  
    Fill `.env` from `.env.example`:
    ```bash
    agihub-cli modelhub get_modelhub_token   # when gateway reachable

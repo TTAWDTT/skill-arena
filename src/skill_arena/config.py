@@ -43,9 +43,9 @@ def load_config(path: Path | None = None) -> dict[str, Any]:
         eval_cfg["repeats"] = int(os.environ["SKILL_ARENA_REPEATS"])
 
     cfg["modelhub"] = {
-        "base_url": os.getenv(
+        "base_url": os.getenv("MODEL_GATEWAY_URL") or os.getenv(
             "MODELHUB_BASE_URL",
-            "https://agihub.bytedance.net/api_proxy/modelhub/agent-cn-01/api/modelhub/online",
+            "<YOUR_MODEL_GATEWAY>",
         ),
         "api_key": os.getenv("MODELHUB_API_KEY") or os.getenv("AGIHUB_USER_TOKEN") or "",
         "ak": os.getenv("MODELHUB_AK") or "",

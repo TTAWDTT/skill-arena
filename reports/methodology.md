@@ -25,9 +25,9 @@ Content-Type: application/json
 }
 ```
 
-Default `MODELHUB_BASE_URL`:
+Set `MODELHUB_BASE_URL` or `MODEL_GATEWAY_URL` (placeholder below is not a real host):
 
-`https://agihub.bytedance.net/api_proxy/modelhub/agent-cn-01/api/modelhub/online`
+`<YOUR_MODEL_GATEWAY>`
 
 Credential bootstrap (when corp network / gateway is up):
 
@@ -39,8 +39,8 @@ agihub-cli modelhub list_modelhub_models
 
 Reference docs:
 
-- [ModelHub—Azure Responses API](https://bytedance.larkoffice.com/wiki/JyLQwnrJFiczHyklYiFccYebnFf)
-- [ModelHub 平台-模型使用手册](https://bytedance.larkoffice.com/wiki/wikcnUPXCY2idGyg2AXKPvay4pd)
+- [ModelHub—Azure Responses API](<INTERNAL_DOC>)
+- [ModelHub 平台-模型使用手册](<INTERNAL_DOC>)
 
 ## Skill loading
 
