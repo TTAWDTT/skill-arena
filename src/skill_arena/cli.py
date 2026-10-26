@@ -9,7 +9,7 @@ from .config import load_config
 from .evaluate import evaluate_pilot
 from .filter_skills import coarse_filter
 from .ingest_local import ingest_skill_md_tree
-from .modelhub import ModelHubClient
+from .gateway import GatewayClient
 from .report import build_leaderboard, write_patterns_stub
 
 
@@ -34,7 +34,7 @@ def main(argv: list[str] | None = None) -> None:
     p_report = sub.add_parser("report", help="Build leaderboard from a run dir")
     p_report.add_argument("--run-dir", type=Path, required=True)
 
-    p_ping = sub.add_parser("ping-model", help="Smoke-test ModelHub with executor model")
+    p_ping = sub.add_parser("ping-model", help="Smoke-test the model gateway with the executor model")
     p_ping.add_argument("--prompt", default="Reply with exactly: pong")
 
     sub.add_parser("status", help="Show catalog / task counts")
@@ -61,11 +61,11 @@ def main(argv: list[str] | None = None) -> None:
         build_leaderboard(cfg, args.run_dir)
         write_patterns_stub(cfg)
     elif args.cmd == "ping-model":
-        mh = cfg["modelhub"]
-        client = ModelHubClient(mh["base_url"], api_key=mh["api_key"], ak=mh["ak"])
+        gw = cfg["gateway"]
+        client = GatewayClient(gw["base_url"], api_key=gw["api_key"], ak=gw["ak"])
         model = cfg["models"]["executor"]
         raw = client.responses_create(model=model, input=args.prompt, max_output_tokens=64)
-        print(json.dumps({"model": model, "text": ModelHubClient.extract_text(raw), "usage": raw.get("usage")}, ensure_ascii=False, indent=2))
+        print(json.dumps({"model": model, "text": GatewayClient.extract_text(raw), "usage": raw.get("usage")}, ensure_ascii=False, indent=2))
     elif args.cmd == "status":
         root = Path(cfg["root"])
         def count(p: Path) -> int:
@@ -82,8 +82,8 @@ def main(argv: list[str] | None = None) -> None:
                     "tasks": len(list((root / "tasks").rglob("*.yaml"))),
                     "runs": count(root / "runs"),
                     "models": cfg["models"],
-                    "modelhub_base_url": cfg["modelhub"]["base_url"],
-                    "has_api_key": bool(cfg["modelhub"]["api_key"] or cfg["modelhub"]["ak"]),
+                    "gateway_base_url": cfg["gateway"]["base_url"],
+                    "has_api_key": bool(cfg["gateway"]["api_key"] or cfg["gateway"]["ak"]),
                 },
                 indent=2,
             )

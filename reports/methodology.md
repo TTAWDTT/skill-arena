@@ -7,15 +7,15 @@
 | Executor | `gpt-5.6-luna` | Runs baseline and with-skill attempts |
 | Judge | `gpt-5.6-sol` | Blind preference; different model family variant from executor |
 
-IDs confirmed against local AGIHub / Magpie model catalogs (not date-suffixed Azure deployment names).
+IDs confirmed against local model catalogs (not date-suffixed Azure deployment names).
 
 ## API
 
-AGIHub ModelHub **Responses** API:
+Model gateway **Responses** API:
 
 ```http
-POST {MODELHUB_BASE_URL}/responses
-Authorization: Bearer <AGIHUB_USER_TOKEN>
+POST {MODEL_GATEWAY_URL}/responses
+Authorization: Bearer <MODEL_GATEWAY_USER_TOKEN>
 Content-Type: application/json
 
 {
@@ -25,22 +25,16 @@ Content-Type: application/json
 }
 ```
 
-Set `MODELHUB_BASE_URL` or `MODEL_GATEWAY_URL` (placeholder below is not a real host):
+Set `MODEL_GATEWAY_URL` (placeholder below is not a real host):
 
 `<YOUR_MODEL_GATEWAY>`
 
-Credential bootstrap (when corp network / gateway is up):
-
-```bash
-agihub-cli modelhub get_modelhub_token
-agihub-cli modelhub get_modelhub_examples
-agihub-cli modelhub list_modelhub_models
-```
+When the gateway is reachable, set `MODEL_GATEWAY_API_KEY` or `MODEL_GATEWAY_USER_TOKEN`, and optionally `MODEL_GATEWAY_AK`.
 
 Reference docs:
 
-- [ModelHub—Azure Responses API](<INTERNAL_DOC>)
-- [ModelHub 平台-模型使用手册](<INTERNAL_DOC>)
+- [Azure Responses API](<INTERNAL_DOC>)
+- [模型使用手册](<INTERNAL_DOC>)
 
 ## Skill loading
 

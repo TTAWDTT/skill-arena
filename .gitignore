@@ -3,7 +3,7 @@
 *.log
 *.py[cod]
 .DS_Store
-.agihub_token
+.gateway_token
 .cache/
 .env
 .env.*
@@ -11,7 +11,7 @@
 .ruff_cache/
 .venv/
 __pycache__/
-modelhub.ak
+gateway.ak
 runs/*/raw/
 skills/_raw/
 skills/_work/

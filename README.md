@@ -9,25 +9,19 @@ Collect Agent Skills from GitHub, coarse-filter them, then run **baseline vs wit
 | Executor (run tasks) | `gpt-5.6-luna` |
 | Judge (blind A/B) | `gpt-5.6-sol` |
 
-Calls go through **AGIHub ModelHub Responses API**:
+Calls go through the model gateway **Responses API**:
 
 ```text
-POST {MODELHUB_BASE_URL}/responses
+POST {MODEL_GATEWAY_URL}/responses
 ```
 
-Set `MODELHUB_BASE_URL` or `MODEL_GATEWAY_URL` in `.env`. If both are unset, the placeholder below is used and will not resolve:
+Set `MODEL_GATEWAY_URL` in `.env`. If it is unset, the placeholder below is used and will not resolve:
 
 ```text
 <YOUR_MODEL_GATEWAY>
 ```
 
-Also set `MODELHUB_API_KEY` or `MODELHUB_AK` (see `.env.example`). When the gateway is reachable:
-
-```bash
-agihub-cli modelhub get_modelhub_token
-agihub-cli modelhub get_modelhub_examples
-agihub-cli modelhub list_modelhub_models
-```
+Also set `MODEL_GATEWAY_API_KEY` or `MODEL_GATEWAY_USER_TOKEN`, and optionally `MODEL_GATEWAY_AK` (see `.env.example`).
 
 ## Layout
 
@@ -48,7 +42,7 @@ src/skill_arena/     # pipeline code
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
-cp .env.example .env   # set MODEL_GATEWAY_URL or MODELHUB_BASE_URL, plus MODELHUB_API_KEY / MODELHUB_AK
+cp .env.example .env   # set MODEL_GATEWAY_URL, MODEL_GATEWAY_API_KEY or MODEL_GATEWAY_USER_TOKEN, and MODEL_GATEWAY_AK
 
 # Stage 0 smoke (no API)
 skill-arena seed
@@ -59,7 +53,7 @@ skill-arena eval-pilot --dry-run
 skill-arena collect --also-seed
 skill-arena filter
 
-# Stage 3 pilot (needs ModelHub)
+# Stage 3 pilot (needs the model gateway)
 skill-arena ping-model
 skill-arena eval-pilot
 ```
