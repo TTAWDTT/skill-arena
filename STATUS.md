@@ -4,19 +4,18 @@
 
 - Repo scaffold at `~/Projects/skill-arena` (dirs, schema, CLI, tasks, reports).
 - Model ids locked: executor **`gpt-5.6-luna`**, judge **`gpt-5.6-sol`**.
-- ModelHub client uses Responses API via AGIHub proxy URL (see `reports/methodology.md`).
+- Gateway client uses the Responses API (see `reports/methodology.md`).
 - Collected **350** unique skills (GitHub `gh api` search); coarse filter kept **300**.
 - Task bank seeded (12 tasks across categories).
 - Dry-run pilot pipeline green (`skill-arena eval-pilot --dry-run`) — **not real model scores**.
 
 ## Blocked / needs you when awake
 
-1. **Corp network / AGIHub gateway** currently times out from this machine  
-   (endpoint comes from `MODELHUB_BASE_URL` or `MODEL_GATEWAY_URL`).  
-   Fill `.env` from `.env.example`:
+1. **Corp network / model gateway** currently times out from this machine  
+   (endpoint comes from `MODEL_GATEWAY_URL`).  
+   Fill `.env` from `.env.example`. Environment variables are unified as `MODEL_GATEWAY_*`.
    ```bash
-   agihub-cli modelhub get_modelhub_token   # when gateway reachable
-   # set MODELHUB_API_KEY=...
+   # set MODEL_GATEWAY_API_KEY or MODEL_GATEWAY_USER_TOKEN
    skill-arena ping-model
    skill-arena eval-pilot                  # real A/B on ~30 skills
    ```

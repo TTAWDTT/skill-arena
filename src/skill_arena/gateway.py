@@ -9,16 +9,16 @@ import httpx
 from tenacity import retry, stop_after_attempt, wait_exponential_jitter
 
 
-class ModelHubError(RuntimeError):
+class GatewayError(RuntimeError):
     pass
 
 
-class ModelHubClient:
-    """Minimal AGIHub / ModelHub Responses API client.
+class GatewayClient:
+    """Minimal model gateway Responses API client.
 
     Auth:
-      - Authorization: Bearer <MODELHUB_API_KEY>  (AGIHub user token)
-      - and/or query param ak=<MODELHUB_AK>       (classic ModelHub)
+      - Authorization: Bearer <MODEL_GATEWAY_API_KEY> or MODEL_GATEWAY_USER_TOKEN
+      - and/or query param ak=<MODEL_GATEWAY_AK>
 
     Endpoint:
       POST {base_url}/responses
@@ -36,10 +36,9 @@ class ModelHubClient:
         self.ak = ak
         self.timeout = timeout
         if not api_key and not ak:
-            raise ModelHubError(
-                "Missing MODELHUB_API_KEY (or AGIHUB_USER_TOKEN) / MODELHUB_AK. "
-                "Copy .env.example → .env and fill credentials. "
-                "When network is up: `agihub-cli modelhub get_modelhub_token`."
+            raise GatewayError(
+                "Missing MODEL_GATEWAY_API_KEY / MODEL_GATEWAY_USER_TOKEN or MODEL_GATEWAY_AK. "
+                "Copy .env.example → .env and fill credentials."
             )
 
     def _headers(self) -> dict[str, str]:
@@ -90,8 +89,8 @@ class ModelHubClient:
             )
         latency_ms = int((time.perf_counter() - started) * 1000)
         if resp.status_code >= 400:
-            raise ModelHubError(
-                f"ModelHub HTTP {resp.status_code}: {resp.text[:800]}"
+            raise GatewayError(
+                f"Gateway HTTP {resp.status_code}: {resp.text[:800]}"
             )
         data = resp.json()
         data["_skill_arena"] = {"latency_ms": latency_ms}

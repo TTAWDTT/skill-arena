@@ -10,7 +10,7 @@ import yaml
 
 from .config import resolve_path
 from .filter_skills import load_jsonl
-from .modelhub import ModelHubClient
+from .gateway import GatewayClient
 from .schema import JudgeVerdict, PairResult, RunAttempt, SkillRecord, TaskSpec
 
 
@@ -58,7 +58,7 @@ def build_messages(
 
 
 def run_attempt(
-    client: ModelHubClient,
+    client: GatewayClient,
     *,
     model: str,
     task: TaskSpec,
@@ -79,8 +79,8 @@ def run_attempt(
             temperature=temperature,
             max_output_tokens=max_output_tokens,
         )
-        text = ModelHubClient.extract_text(raw)
-        inp_tok, out_tok = ModelHubClient.usage_tokens(raw)
+        text = GatewayClient.extract_text(raw)
+        inp_tok, out_tok = GatewayClient.usage_tokens(raw)
         latency = int((raw.get("_skill_arena") or {}).get("latency_ms") or 0)
         triggered = None
         if skill is not None:
@@ -134,7 +134,7 @@ Return STRICT JSON only:
 
 
 def judge_pair(
-    client: ModelHubClient,
+    client: GatewayClient,
     *,
     judge_model: str,
     task: TaskSpec,
@@ -156,7 +156,7 @@ def judge_pair(
         temperature=0.0,
         max_output_tokens=800,
     )
-    text = ModelHubClient.extract_text(raw)
+    text = GatewayClient.extract_text(raw)
     parsed = _parse_json_object(text)
     parsed["_raw_text"] = text
     parsed["_order"] = order_label
@@ -210,8 +210,8 @@ def evaluate_pilot(cfg: dict[str, Any], *, dry_run: bool = False) -> Path:
 
     client = None
     if not dry_run:
-        mh = cfg["modelhub"]
-        client = ModelHubClient(mh["base_url"], api_key=mh["api_key"], ak=mh["ak"])
+        gw = cfg["gateway"]
+        client = GatewayClient(gw["base_url"], api_key=gw["api_key"], ak=gw["ak"])
 
     meta = {
         "run_id": run_id,

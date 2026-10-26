@@ -1,7 +1,7 @@
 # Skill Arena Leaderboard
 
 > **NOTE:** Current numbers are from a **dry-run** (`eval-pilot --dry-run`) with stub answers.
-> Replace after a real ModelHub run with `gpt-5.6-luna` / `gpt-5.6-sol`.
+> Replace after a real gateway run with `gpt-5.6-luna` / `gpt-5.6-sol`.
 
 Source run: `runs/pilot_1455fdbefb`  
 Win rate = fraction of blind A/B judgments preferring with-skill over baseline (order-swapped). Threshold for curated: **> 0.55**.

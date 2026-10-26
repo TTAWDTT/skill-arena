@@ -42,13 +42,10 @@ def load_config(path: Path | None = None) -> dict[str, Any]:
     if os.getenv("SKILL_ARENA_REPEATS"):
         eval_cfg["repeats"] = int(os.environ["SKILL_ARENA_REPEATS"])
 
-    cfg["modelhub"] = {
-        "base_url": os.getenv("MODEL_GATEWAY_URL") or os.getenv(
-            "MODELHUB_BASE_URL",
-            "<YOUR_MODEL_GATEWAY>",
-        ),
-        "api_key": os.getenv("MODELHUB_API_KEY") or os.getenv("AGIHUB_USER_TOKEN") or "",
-        "ak": os.getenv("MODELHUB_AK") or "",
+    cfg["gateway"] = {
+        "base_url": os.getenv("MODEL_GATEWAY_URL") or "<YOUR_MODEL_GATEWAY>",
+        "api_key": os.getenv("MODEL_GATEWAY_API_KEY") or os.getenv("MODEL_GATEWAY_USER_TOKEN") or "",
+        "ak": os.getenv("MODEL_GATEWAY_AK") or "",
     }
     cfg["root"] = str(ROOT)
     return cfg
