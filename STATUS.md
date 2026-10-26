@@ -13,7 +13,7 @@
 
 1. **Corp network / model gateway** currently times out from this machine  
    (endpoint comes from `MODEL_GATEWAY_URL`).  
-   Fill `.env` from `.env.example`. Old names are not read; see the rename table below.
+   Fill `.env` from `.env.example`. Environment variables are unified as `MODEL_GATEWAY_*`.
    ```bash
    # set MODEL_GATEWAY_API_KEY or MODEL_GATEWAY_USER_TOKEN
    skill-arena ping-model
@@ -21,19 +21,6 @@
    ```
 2. Expand tasks to 10–15 per category (`tasks/`).
 3. Human-spot-check ~10% of judge verdicts after real pilot.
-
-## Gateway name migration
-
-Old environment variables and filenames are not accepted.
-
-| Old | New |
-|---|---|
-| `MODELHUB_BASE_URL` | `MODEL_GATEWAY_URL` only |
-| `MODELHUB_API_KEY` | `MODEL_GATEWAY_API_KEY` |
-| `AGIHUB_USER_TOKEN` | `MODEL_GATEWAY_USER_TOKEN` |
-| `MODELHUB_AK` | `MODEL_GATEWAY_AK` |
-| `modelhub.py` / `ModelHubClient` | `gateway.py` / `GatewayClient` |
-| `.agihub_token` / `modelhub.ak` | `.gateway_token` / `gateway.ak` |
 
 ## Commands
 
