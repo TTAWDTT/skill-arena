@@ -37,8 +37,7 @@ class GatewayClient:
         self.timeout = timeout
         if not api_key and not ak:
             raise GatewayError(
-                "Missing MODEL_GATEWAY_API_KEY or MODEL_GATEWAY_USER_TOKEN, "
-                "and MODEL_GATEWAY_AK. "
+                "Missing MODEL_GATEWAY_API_KEY / MODEL_GATEWAY_USER_TOKEN or MODEL_GATEWAY_AK. "
                 "Copy .env.example → .env and fill credentials."
             )
 

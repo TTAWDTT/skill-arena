@@ -43,7 +43,7 @@ def load_config(path: Path | None = None) -> dict[str, Any]:
         eval_cfg["repeats"] = int(os.environ["SKILL_ARENA_REPEATS"])
 
     cfg["gateway"] = {
-        "base_url": os.getenv("MODEL_GATEWAY_URL", "<YOUR_MODEL_GATEWAY>"),
+        "base_url": os.getenv("MODEL_GATEWAY_URL") or "<YOUR_MODEL_GATEWAY>",
         "api_key": os.getenv("MODEL_GATEWAY_API_KEY") or os.getenv("MODEL_GATEWAY_USER_TOKEN") or "",
         "ak": os.getenv("MODEL_GATEWAY_AK") or "",
     }
